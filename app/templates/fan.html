@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Smart Fan Control</h1>
+  <div>
+    <form action="/fan/pwr" method='post'>
+      <p><button type='submit' value='pwr' style="height:200px; width:550px">On/Off</button></p>
+    </form>
+    <form action="/fan/1" method='post'>
+      <p><button type='submit' value='ll' style="height:200px; width:550px">I</button></p>
+    </form>
+    <form action="/fan/2" method='post'>
+      <p><button type='submit' value='l' style="height:200px; width:550px">II</button></p>
+    </form>
+    <form action="/fan/3" method='post'>
+      <p><button type='submit' value='m' style="height:200px; width:550px">III</button></p>
+    </form>
+    <form action="/fan/4" method='post'>
+      <p><button type='submit' value='h' style="height:200px; width:550px">IV</button></p>
+    </form>
+  </div>
+{% endblock %}

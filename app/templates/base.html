@@ -1,0 +1,21 @@
+<!doctype html>
+<head>
+  <title>Thornhill Smart House</title>
+</head>
+<body>
+  <div>Smart Room:
+    <a href="{{ url_for('fan') }}">fan</a>
+    <a href="{{ url_for('yoda') }}">baby-yoda</a>
+  </div>
+  <hr>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li>{{ messages }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</body>
