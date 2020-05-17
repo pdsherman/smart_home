@@ -2,10 +2,16 @@
 import time
 import RPi.GPIO as GPIO
 
+PWR_PIN    = 4
+HIGH_PIN   = 3
+LOW_PIN    = 27
+LOWLOW_PIN = 22
+MEDIUM_PIN = 2
+
 def setup():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
-    pins = [17, 22, 27, 23, 24]
+    pins = [PWR_PIN, HIGH_PIN, LOW_PIN, LOWLOW_PIN, MEDIUM_PIN]
     for p in pins:
         GPIO.setup(p, GPIO.OUT)
         GPIO.output(p, GPIO.HIGH)
@@ -16,19 +22,19 @@ def pulse(pin):
     GPIO.output(pin, GPIO.HIGH)
 
 def pwr():
-    pulse(17)
+    pulse(PWR_PIN)
 
 def lowlow():
-    pulse(27)
+    pulse(LOWLOW_PIN)
 
 def low():
-    pulse(23)
+    pulse(LOW_PIN)
 
 def medium():
-    pulse(24)
+    pulse(MEDIUM_PIN)
 
 def high():
-    pulse(22)
+    pulse(HIGH_PIN)
 
 if __name__ == "__main__":
     setup()
